@@ -1,0 +1,23 @@
+html{
+    height: 100%;
+    width: 100%;
+    background-color: beige;
+}
+#clock {
+    font-size: 145px;
+    /* Adjust size */
+    text-align: center;
+    /* Center the text */
+    margin-top:220px;
+    /* Add some spacing */
+    color: #333;
+    /* Pick a color */
+}
+.cat-image {
+    position: absolute;  /* Positions the cat relative to the clock container */
+    top: 20%;  /* Adjust the vertical position */
+    left: 75.2%;  /* Centers it horizontally */
+    transform: translateX(-50%);  /* Centers the image exactly */
+    width: 100px;  /* Adjust the size of the cat image */
+    height: 100px;  /* Maintain aspect ratio */
+  }
