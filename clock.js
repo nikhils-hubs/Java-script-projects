@@ -7,7 +7,7 @@ function updatetime() {
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     let amPm = hours >= 12 ? "PM" : "AM"
-
+    hours=hours%12||12;
     const clock = `${hours}:${minutes}:${seconds}:${amPm}`
     clocktiming.innerHTML = clock
 }
