@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+  background-color: beige; /* Soft off-white */
+  font-family: 'Poppins', sans-serif;
+  color: #4a4a4a;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Input Field */
+#task-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #d4b5ff; /* Light lavender */
+  border-radius: 12px;
+  background-color: #f9f5ff; /* Very light lavender */
+  color: #4a4a4a;
+  outline: none;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+#task-input:focus {
+  border-color: #b09dff; /* Lavender highlight */
+}
+
+/* Add Task Button */
+#add-task-btn {
+  background-color: #b09dff; /* Lavender */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#add-task-btn:hover {
+  background-color: #9077ff; /* Slightly darker lavender */
+  box-shadow: 0px 4px 8px rgba(144, 119, 255, 0.3); /* Soft shadow */
+}
+
+/* Task List */
+#task-list {
+  width: 80%;
+  max-width: 400px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#task-list li {
+  background-color: #ffe8e8; /* Light pink */
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s ease;
+}
+
+#task-list li:hover {
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Task Text */
+#task-list li span {
+  font-size: 16px;
+  color: #4a4a4a;
+}
+
+#task-list li span.Done{
+  text-decoration: line-through;
+  color: #a4a4a4; /* Faded gray */
+}
+
+/* Completed Button */
+.mark-btn {
+  background-color: #98c1d9; /* Soft blue */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.mark-btn:hover {
+  background-color: #77a7c7; /* Slightly darker blue */
+  transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff6b6b; /* Soft red */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #ff4c4c; /* Slightly darker red */
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #task-input {
+      width: 90%;
+  }
+  #task-list {
+      width: 90%;
+  }
+}
+/* Task Text Cut Effect */
+#task-list li span.completed {
+  text-decoration: line-through;
+  color: #a4a4a4; /* Faded gray */
+  position: relative;
+  padding-right: 20px;
+  transition: color 0.3s ease;
+}
+
+#task-list li span.done:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the cut line */
+  background-color: #ffffff; /* Soft red cut line color */
+  transform: translateY(-50%);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#task-list li span.done {
+  animation: cut-effect 0.5s ease-out forwards;
+}
+
+/* Animation for "Cutting" Effect */
+@keyframes cut-effect {
+  0% {
+      width: 0;
+      background-color: transparent;
+  }
+  100% {
+      width: 100%;
+      background-color: #fae2e2; /* Soft red color of the cut line */
+  }
+}
